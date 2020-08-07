@@ -26,6 +26,13 @@ function sortByRichest() {
   updateDOM()
 }
 
+// Filter only millionaires
+function showMillionaires() {
+  data = data.filter(person => person.money > 1000000)
+
+  updateDOM()
+}
+
 // Fetch random user and add money
 async function getRandomUser() {
   const res = await fetch('https://randomuser.me/api')
@@ -73,3 +80,4 @@ function formatMoney(money) {
 addUser.addEventListener('click', getRandomUser)
 doubleBtn.addEventListener('click', doubleMoney)
 sortBtn.addEventListener('click', sortByRichest)
+showMillionairesBtn.addEventListener('click', showMillionaires)
