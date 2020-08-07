@@ -19,6 +19,13 @@ function doubleMoney() {
   updateDOM()
 }
 
+// Sort users by Richest
+function sortByRichest() {
+  data.sort((a, b) => b.money - a.money)
+
+  updateDOM()
+}
+
 // Fetch random user and add money
 async function getRandomUser() {
   const res = await fetch('https://randomuser.me/api')
@@ -65,3 +72,4 @@ function formatMoney(money) {
 // Event Listeners
 addUser.addEventListener('click', getRandomUser)
 doubleBtn.addEventListener('click', doubleMoney)
+sortBtn.addEventListener('click', sortByRichest)
